@@ -47,7 +47,7 @@ public class SecurityConfig {
                 .sessionManagement(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((auth) -> {
                     auth
-                            .requestMatchers("/**").hasRole("ROLE_MASTER")
+                            .requestMatchers("/**").hasRole("MASTER")
                             .requestMatchers(permitList).permitAll()
                             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                             .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
